@@ -1,2 +1,16 @@
 ---
 # defaults file for mavan-install
+maven_major_version: "3"
+maven_minor_version: "6"
+maven_hotfix_version: "1"
+
+maven_version: "{{ maven_major_version }}.{{ maven_minor_version }}.{{ maven_hotfix_version }}"
+maven_file_name: "apache-maven-{{ maven_version }}-bin.tar.gz"
+
+maven_download_url: "http://www.apache.org/dist/maven/maven-{{ maven_major_version }}/{{ maven_version }}/binaries/{{ maven_file_name }}"
+maven_install_dir: "/opt/maven"
+
+# https://www.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz.sha512
+
+# maven_download_checksum_url: https://www.apache.org/dist/maven/maven-{{ maven_major_version}}/{{ maven_version }}/binaries/{{ maven_file_name }}.sha512
+# maven_download_md5_checksum: "sha512: {{ lookup('url', maven_download_checksum_url) }}"
