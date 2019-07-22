@@ -2,7 +2,7 @@ galaxy_info:
   author: sirReeall
   description: Technologically Surreal
 
-  license: GPL-3.0-only
+  license: Free
 
   min_ansible_version: 2.4
 
