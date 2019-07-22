@@ -1,2 +1,6 @@
 ---
 # tasks file for mavan-install
+- name: Check download dir exists
+  file:
+    path: {{  download_dir  }}
+    state: directory
