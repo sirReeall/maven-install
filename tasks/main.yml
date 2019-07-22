@@ -15,7 +15,24 @@
     dest: '{{ maven_install_dir }}'
     copy: no
     extra_opts: "--strip-components=1"
-  
+
+- name: Remove previous Maven scripts
+  file:
+    path: /etc/profile.d/maven.sh
+    state: absent
+
+- name: Create Maven script
+  lineinfile:
+    dest: /etc/profile.d/maven.sh
+    line: "{{ item.line }}"
+    create: yes
+    state: present
+    mode: 0755
+  with_items:
+    - { line: "# Apache Maven Environment Variables" }
+    - { line: "# Create by Ansible Role" }
+    - { line: "export M2_HOME={{ maven_install_dir }}" }
+    - { line: "export PATH=$PATH:$M2_HOME/bin" }
 
 - name: Clear up downloaded maven binary
   file:
