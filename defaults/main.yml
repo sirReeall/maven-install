@@ -1,2 +1,3 @@
 ---
 # defaults file for mavan-install
+download_dir: "/tmp/ansible/maven-install/downloads"
