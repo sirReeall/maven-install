@@ -38,3 +38,11 @@
   file:
     path: "{{ maven_install_dir }}/{{ maven_file_name }}"
     state: absent
+
+# install java jdk for maven and update .mavenrc 
+- name: Install java using yum
+  yum:
+    name: java-1.8.0-openjdk-devel
+    state: present
+
+# TODO: setup $JAVA_HOME for maven 
